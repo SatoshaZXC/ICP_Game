@@ -28,7 +28,7 @@ namespace ICP
 
             Console.WriteLine();
 
-            Console.Write("2. ");
+            Console.Write("0. ");
 
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("Решка (O)\n");
@@ -98,7 +98,8 @@ namespace ICP
             Console.WriteLine(result + "   ");
             Console.ResetColor();
             return playerChoice ==resultReturn ?  true : false;
-            
+            //return playerChoice == resultReturn ? false : true;
+
         }
     }
 }

@@ -70,7 +70,7 @@ namespace ICP.Entity
                 }
                 if (uotTriggered)
                     return;
-                // Получаем предметы подходящие слоту
+                // Отримуємо предмети, що підходять для слота
                 List<Item> validItems = new List<Item>();
 
                 foreach (var item in inventory.GetAllItems())
@@ -96,15 +96,15 @@ namespace ICP.Entity
                     return;
                 }
 
-                // вывод списка
+                // виведення списку
                 for (int i = 0; i < validItems.Count; i++)
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write($"{i + 1}. {validItems[i].Name}");
                     Console.ResetColor();
 
-                    //Console.WriteLine($" (Стат: {validItems[i].Stat})");
-                    Console.WriteLine($" (Шкода: {validItems[i].Stat})");
+                    Console.WriteLine($" (Стат: {validItems[i].Stat})");
+                    //Console.WriteLine($" (Шкода: {validItems[i].Stat})");
                 }
 
                 Console.Write("\nОбери предмет: ");
@@ -117,7 +117,7 @@ namespace ICP.Entity
                     Console.Write("\rОбери предмет: ");
                     var key = Console.ReadKey(true);
 
-                    // выбор цифрами
+                    // вибір у цифрах
                     if (char.IsDigit(key.KeyChar))
                     {
                         int index = int.Parse(key.KeyChar.ToString());
@@ -135,7 +135,7 @@ namespace ICP.Entity
                         continue;
                     }
 
-                    // подтверждение
+                    // підтвердження
                     if (key.Key == ConsoleKey.Enter)
                     {
                         if (selectedItem != null)

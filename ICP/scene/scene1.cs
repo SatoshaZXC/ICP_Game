@@ -43,13 +43,13 @@ namespace ICP.scene
 
             Chest oldChest = new Chest("Старий Сундук");
 
-            // Шансы
+            // Шанси
             oldChest.AddTypeChance(ItemType.Weapon, 30);
             oldChest.AddTypeChance(ItemType.MagicalWeapon, 15);
             oldChest.AddTypeChance(ItemType.Consumable, 40);
             oldChest.AddTypeChance(ItemType.Artifact, 15);
 
-            // Предметы
+            // Предмети
             oldChest.AddItems(ItemType.Weapon, Weapons);
             oldChest.AddItems(ItemType.MagicalWeapon, MagicalWeapons);
             oldChest.AddItems(ItemType.Consumable, Consumables);
@@ -57,49 +57,49 @@ namespace ICP.scene
 
             Chest potionShelf = new Chest("Полиця Алхіміка");
 
-            // Шансы
+            // Шанси
             potionShelf.AddTypeChance(ItemType.Consumable, 80);
             potionShelf.AddTypeChance(ItemType.Artifact, 10);
             potionShelf.AddTypeChance(ItemType.MagicalWeapon, 10);
 
-            // Предметы
+            // Предмети
             potionShelf.AddItems(ItemType.Consumable, Consumables);
             potionShelf.AddItems(ItemType.Artifact, Artifacts);
             potionShelf.AddItems(ItemType.MagicalWeapon, MagicalWeapons);
 
             Chest weaponStand = new Chest("Стенд Зброї");
 
-            // Шансы
+            // Шанси
             weaponStand.AddTypeChance(ItemType.Weapon, 65);
             weaponStand.AddTypeChance(ItemType.MagicalWeapon, 25);
             weaponStand.AddTypeChance(ItemType.Artifact, 10);
 
-            // Предметы
+            // Предмети
             weaponStand.AddItems(ItemType.Weapon, Weapons);
             weaponStand.AddItems(ItemType.MagicalWeapon, MagicalWeapons);
             weaponStand.AddItems(ItemType.Artifact, Artifacts);
 
             Chest darkAltar = new Chest("Темний Вівтар");
 
-            // Шансы
+            // Шанси
             darkAltar.AddTypeChance(ItemType.Artifact, 60);
             darkAltar.AddTypeChance(ItemType.MagicalWeapon, 30);
             darkAltar.AddTypeChance(ItemType.Consumable, 10);
 
-            // Предметы
+            // Предмети
             darkAltar.AddItems(ItemType.Artifact, Artifacts);
             darkAltar.AddItems(ItemType.MagicalWeapon, MagicalWeapons);
             darkAltar.AddItems(ItemType.Consumable, Consumables);
 
             Chest junkPile = new Chest("Купа Старих Речей");
 
-            // Шансы
+            // Шанси
             junkPile.AddTypeChance(ItemType.Consumable, 50);
             junkPile.AddTypeChance(ItemType.Weapon, 25);
             junkPile.AddTypeChance(ItemType.Artifact, 15);
             junkPile.AddTypeChance(ItemType.MagicalWeapon, 10);
 
-            // Предметы
+            // Предмети
             junkPile.AddItems(ItemType.Consumable, Consumables);
             junkPile.AddItems(ItemType.Weapon, Weapons);
             junkPile.AddItems(ItemType.Artifact, Artifacts);
@@ -216,7 +216,7 @@ namespace ICP.scene
                             break;
 
                         case ConsoleKey.Enter:
-                            if (tempChoice != null) // если уже был выбор
+                            if (tempChoice != null) // якщо вибір уже зроблено
                                 break;
                             else
                                 continue;
@@ -225,11 +225,11 @@ namespace ICP.scene
                             continue;
                     }
 
-                    // если нажали Enter — выходим
+                    // якщо натиснули Enter — виходимо
                     if (keyInfo.Key == ConsoleKey.Enter)
                         break;
 
-                    tempChoice = true; // просто флаг что выбор сделан
+                    tempChoice = true; // просто прапор, що вибір зроблено
 
 
                 }

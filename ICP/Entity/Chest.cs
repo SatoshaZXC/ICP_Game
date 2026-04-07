@@ -21,27 +21,27 @@ namespace ICP.Entity
             Items = new Dictionary<ItemType, Dictionary<string, Item>>();
         }
 
-        // Добавление шансов выпадения типа
+        // Додавання шансів на випадання типу
         public void AddTypeChance(ItemType type, int chance)
         {
             TypeChances[type] = chance;
         }
 
-        // Добавление списка предметов
+        // Додавання списку предметів
         public void AddItems(ItemType type, Dictionary<string, Item> items)
         {
             Items[type] = items;
         }
 
-        // Получение случайного предмета
+        // Отримання випадкового предмета
         public Item Open()
         {
-            // 1. Выбираем тип по шансам
+            // 1. Вибираємо тип за шансами
             int total = 0;
             foreach (var chance in TypeChances.Values) total += chance;
             int roll = rnd.Next(total);
 
-            ItemType selectedType = ItemType.Weapon; // по умолчанию
+            ItemType selectedType = ItemType.Weapon; // за замовчуванням
             int cumulative = 0;
             foreach (var kvp in TypeChances)
             {
@@ -53,13 +53,13 @@ namespace ICP.Entity
                 }
             }
 
-            // 2. Выбираем случайный предмет из выбранного типа
+            // 2. Вибираємо випадковий предмет із обраного типу
             var itemsOfType = Items[selectedType];
             int itemIndex = rnd.Next(itemsOfType.Count);
             string key = new List<string>(itemsOfType.Keys)[itemIndex];
             Item selectedItem = itemsOfType[key];
 
-            // 3. Для расходников случайная величина
+            // 3. Для витратних матеріалів випадкова величина
             if (selectedItem.Type == ItemType.Consumable)
             {
                 int qty = rnd.Next(selectedItem.Quantity.Min, selectedItem.Quantity.Max + 1);

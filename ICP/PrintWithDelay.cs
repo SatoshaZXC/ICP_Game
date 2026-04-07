@@ -12,10 +12,10 @@ namespace ICP
         {
             foreach (char c in text)
             {
-                Console.Write(c);        // выводим букву
-                Thread.Sleep(delayMilliseconds); // ждём
+                Console.Write(c);        // виводимо букву
+                Thread.Sleep(delayMilliseconds); // чекаємо
             }
-            Console.WriteLine(); // перевод на следующую строку после текста
+            Console.WriteLine(); // перехід на наступний рядок після тексту
         }
     }
 }

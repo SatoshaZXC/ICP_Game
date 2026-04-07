@@ -18,7 +18,7 @@ namespace ICP.Entity
         public int BaseHP { get; set; }
         public int BaseDamage { get; set; }
 
-        // экипированные предметы
+        // предмети екіпіровки
         public Dictionary<EquipmentSlot, Item> Equipment;
 
         public Player(string name, int hp, int damage)
@@ -91,7 +91,7 @@ namespace ICP.Entity
             }
         }
 
-        //Вывод состояния игрока
+        //Виведення стану гравця
         public void PrintStats()
         {
             Console.WriteLine($"=== {Name} ===");
@@ -99,9 +99,7 @@ namespace ICP.Entity
             Console.WriteLine($"Шкода: {GetDamage()}");
             
             PrintEquipment();
-            //Console.WriteLine($"Правая рука: {(EquipmentSlot.RightHand != null ? EquipmentSlot.RightHand : "Пуста")}");
-            //Console.WriteLine($"Левая рука: {(EquipmentSlot.LeftHand != null ? EquipmentSlot.LeftHand : "Пуста")}");
-            //Console.WriteLine($"Шея: {(EquipmentSlot.Neck != null ? EquipmentSlot.Neck : "Пуста")}");
+            
             Console.WriteLine("=================");
         }
     }

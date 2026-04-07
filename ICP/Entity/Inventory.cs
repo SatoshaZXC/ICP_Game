@@ -8,7 +8,7 @@ namespace ICP.Entity
 {
     class Inventory
     {
-        // Хеш-таблица: ключ - название предмета, значение - сам предмет
+        // Хеш-таблиця: ключ — назва предмета, значення — сам предмет
         private Dictionary<string, Item> items;
 
         public Inventory()
@@ -16,12 +16,12 @@ namespace ICP.Entity
             items = new Dictionary<string, Item>();
         }
 
-        // Добавляем предмет
+        // Додаємо предмет
         public void AddItem(Item item)
         {
             if (item.Type == ItemType.Consumable)
             {
-                // Для расходников увеличиваем количество, если уже есть
+                // Для витратних матеріалів збільшуємо кількість, якщо вони вже є
                 if (items.ContainsKey(item.Name))
                 {
                     var existing = items[item.Name];
@@ -35,20 +35,20 @@ namespace ICP.Entity
             }
             else
             {
-                // Для оружия и артефактов просто добавляем, уникально по имени
+                // Для зброї та артефактів просто додаємо, унікально за назвою
                 if (!items.ContainsKey(item.Name))
                     items[item.Name] = item;
             }
         }
 
-        // Удаляем предмет (например, расходник при использовании)
+        // Видаляємо предмет (наприклад, витратний матеріал під час використання)
         public void RemoveItem(string itemName)
         {
             if (items.ContainsKey(itemName))
                 items.Remove(itemName);
         }
 
-        // Получить предмет по имени
+        // Отримати предмет за назвою
         public Item GetItem(string itemName)
         {
             return items.ContainsKey(itemName) ? items[itemName] : null;
@@ -57,7 +57,7 @@ namespace ICP.Entity
         {
             return new List<Item>(items.Values);
         }
-        // Печать инвентаря
+        // Друк інвентарного списку
         public void PrintInventory()
         {
             if (items.Count == 0)
@@ -67,11 +67,11 @@ namespace ICP.Entity
             }
 
             Console.WriteLine("=== Твій Інвентар ===");
-            int index = 1; // начинаем нумерацию с 1
+            int index = 1; // починаємо нумерацію з 1
             foreach (var kvp in items)
             {
                 Item item = kvp.Value;
-                Console.ForegroundColor = ConsoleColor.Yellow; // только имя предмета выделяем
+                Console.ForegroundColor = ConsoleColor.Yellow; // виділяємо лише назву предмета
                 Console.Write($"{index}. {item.Name}");
                 Console.ResetColor();
 
