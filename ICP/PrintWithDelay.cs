@@ -10,12 +10,27 @@ namespace ICP
     {
        public static void printWithDelay(string text, int delayMilliseconds)
         {
-            foreach (char c in text)
+            bool skip = false;
+
+            for (int i = 0; i < text.Length; i++)
             {
-                Console.Write(c);        // виводимо букву
-                Thread.Sleep(delayMilliseconds); // чекаємо
+                if (Console.KeyAvailable)
+                {
+                    Console.ReadKey(true);
+                    skip = true;
+                }
+
+                if (skip)
+                {
+                    Console.Write(text.Substring(i));
+                    break;
+                }
+
+                Console.Write(text[i]);
+                Thread.Sleep(delayMilliseconds);
             }
-            Console.WriteLine(); // перехід на наступний рядок після тексту
+
+            Console.WriteLine();
         }
     }
 }
