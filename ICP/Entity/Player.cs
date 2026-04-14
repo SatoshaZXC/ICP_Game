@@ -73,8 +73,6 @@ namespace ICP.Entity
 
         public void Equip(EquipmentSlot slot, Item item, Inventory inventory)
         {
-            //Equipment[slot] = item;
-            //inventory.RemoveItem(item.Name);
 
             if (Equipment[slot] == null)
             {
