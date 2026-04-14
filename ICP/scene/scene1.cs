@@ -144,11 +144,6 @@ namespace ICP.scene
                 string stringStatusOpen_4 = statusOpen_4 ? "(Вже oглянутo)" : "";
                 string stringStatusOpen_5 = statusOpen_5 ? "(Вже обшукано)" : "";
 
-                //string stringStatusOpen_1 = " ";
-                //string stringStatusOpen_2 = " ";
-                //string stringStatusOpen_3 = " ";
-                //string stringStatusOpen_4 = " ";
-                //string stringStatusOpen_5 = " ";
 
 
                 Console.WriteLine("1. Заглянути у старий сундук" + stringStatusOpen_1);
@@ -251,8 +246,8 @@ namespace ICP.scene
                             Console.Clear();
                         }
 
-                        //statusOpen_1 = true;
-                        
+                        statusOpen_1 = true;
+
                         break;
 
                     case ConsoleKey.D2:
@@ -271,8 +266,8 @@ namespace ICP.scene
                             Console.Clear();
                         }
 
-                        //statusOpen_2 = true;
-                       
+                        statusOpen_2 = true;
+
                         break;
 
                     case ConsoleKey.D3:
@@ -291,8 +286,8 @@ namespace ICP.scene
                             Console.Clear();
                         }
 
-                        //statusOpen_3 = true;
-                       
+                        statusOpen_3 = true;
+
                         break;
 
                     case ConsoleKey.D4:
@@ -311,8 +306,8 @@ namespace ICP.scene
                             Console.Clear();
                         }
 
-                        //statusOpen_4 = true;
-                       
+                        statusOpen_4 = true;
+
                         break;
 
                     case ConsoleKey.D5:
@@ -331,8 +326,8 @@ namespace ICP.scene
                             Console.Clear();
                         }
 
-                        //statusOpen_5 = true;
-                        
+                        statusOpen_5 = true;
+
                         break;
 
                     case ConsoleKey.D6:
