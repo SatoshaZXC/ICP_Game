@@ -87,18 +87,15 @@ namespace ICP
                 Thread.Sleep(speedCoin+=10);
 
             }
-            //bool isHead = rnd.Next(2) == 0;
-
-            //string result = isHead ? "Орёл" : "Решка";
-            //int resultReturn = isHead ? 0 : 1;
+          
             (string result, bool resultReturn) = rnd.Next(2) == 0 ? ("Орёл (X)", true) : ("Решка (O)", false);
 
             Console.Write("\rМонетка: " );
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine(result + "   ");
+            Console.WriteLine(result + "    ");
             Console.ResetColor();
             return playerChoice ==resultReturn ?  true : false;
-            //return playerChoice == resultReturn ? false : true;
+            
 
         }
     }
