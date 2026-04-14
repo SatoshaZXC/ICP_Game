@@ -16,7 +16,10 @@ namespace ICP.scene
             /*#######################################################################################################################################################*/
             Inventory playerInventory = new Inventory();
             tempOpen tempOpen = new tempOpen();
-            Player player = new Player("Герой", 100, 10);
+            printWithDelay("\nНазви себе, мандрівнику... або залишишся безіменним серед тіней.", 35);
+            Console.Write("\n> ");
+            Player player = new Player(Console.ReadLine(), 100, 10);
+            Console.Clear();
             EquipmentMenu equipmentMenu = new EquipmentMenu();
 
             Dictionary<string, Item> Weapons = new Dictionary<string, Item>();
