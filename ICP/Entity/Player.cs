@@ -66,7 +66,6 @@ namespace ICP.Entity
             {
                 Console.Write($"{slot.Key}: ");
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                //Console.WriteLine(slot.Value != null ? $"{slot.Value.Name} (Стат: {slot.Value.Stat})" : "Пусто");
                 Console.WriteLine(slot.Value != null ? $"{slot.Value.Name} (Шкода: {slot.Value.Stat})" : "Пусто");
                 Console.ResetColor();
             }

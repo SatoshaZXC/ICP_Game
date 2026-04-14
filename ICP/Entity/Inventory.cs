@@ -78,7 +78,7 @@ namespace ICP.Entity
                 if (item.Type == ItemType.Consumable)
                     Console.WriteLine($" ({item.Quantity.Min}) — {item.Description}");
                 else
-                    Console.WriteLine($" (Стат: {item.Stat}) — {item.Description}");
+                    Console.WriteLine($" (Шкода: {item.Stat}) — {item.Description}");
 
                 index++;
             }
