@@ -103,8 +103,7 @@ namespace ICP.Entity
                     Console.Write($"{i + 1}. {validItems[i].Name}");
                     Console.ResetColor();
 
-                    Console.WriteLine($" (Стат: {validItems[i].Stat})");
-                    //Console.WriteLine($" (Шкода: {validItems[i].Stat})");
+                    Console.WriteLine($" (Шкода: {validItems[i].Stat})");
                 }
 
                 Console.Write("\nОбери предмет: ");

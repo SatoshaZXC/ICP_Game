@@ -37,8 +37,7 @@ namespace ICP.Entity
             if (Type == ItemType.Consumable)
                 return $"{Name} ({Quantity.Max}) — {Description}";
             else
-                return $"{Name} (Стат: {Stat}) — {Description}";
-                //return $"{Name} (Шкода: {Stat}) — {Description}";
+                return $"{Name} (Шкода: {Stat}) — {Description}";
         }
     }
 }

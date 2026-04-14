@@ -38,8 +38,8 @@ namespace ICP.scene
             Artifacts["AmuletOfShadows"] = new Item("Амулет Тіней", ItemType.Artifact, "Додає +5 до максимального здоров'я", 5);
             MagicalWeapons["ShadowBow"] = new Item("Тіньовий лук", ItemType.MagicalWeapon, "Лук, що стріляє тінями", 30);
 
-            //playerInventory.AddItem(Weapons["DarkSword"]);
-            //playerInventory.AddItem(Weapons["SilverDagger"]);
+            playerInventory.AddItem(Weapons["DarkSword"]);
+            playerInventory.AddItem(Weapons["SilverDagger"]);
 
             Chest oldChest = new Chest("Старий Сундук");
 
