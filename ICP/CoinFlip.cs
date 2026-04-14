@@ -28,7 +28,7 @@ namespace ICP
 
             Console.WriteLine();
 
-            Console.Write("0. ");
+            Console.Write("2. ");
 
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("Решка (O)\n");
