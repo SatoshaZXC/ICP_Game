@@ -5,7 +5,9 @@ VisualStudioVersion = 17.14.36603.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICP", "ICP\ICP.csproj", "{604C06F9-0125-43F0-948B-AB1656994237}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICP.Test", "ICP.Test\ICP.Test.csproj", "{56A10505-163A-4DC0-BE25-D3BF5AFE3DCB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICP.Tests", "ICP.Test\ICP.Tests.csproj", "{56A10505-163A-4DC0-BE25-D3BF5AFE3DCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICP.AssertTests", "ICP.AssertTests\ICP.AssertTests.csproj", "{48EB8ADF-57FF-4833-AAE6-E77EBD7D6A91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{56A10505-163A-4DC0-BE25-D3BF5AFE3DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56A10505-163A-4DC0-BE25-D3BF5AFE3DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56A10505-163A-4DC0-BE25-D3BF5AFE3DCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48EB8ADF-57FF-4833-AAE6-E77EBD7D6A91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48EB8ADF-57FF-4833-AAE6-E77EBD7D6A91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48EB8ADF-57FF-4833-AAE6-E77EBD7D6A91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48EB8ADF-57FF-4833-AAE6-E77EBD7D6A91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

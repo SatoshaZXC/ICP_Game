@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace ICP.Entity
 {
-    class Inventory
+    public class Inventory
     {
         // Хеш-таблиця: ключ — назва предмета, значення — сам предмет
-        private Dictionary<string, Item> items;
+        private Dictionary<Guid, Item> items;
 
         public Inventory()
         {
-            items = new Dictionary<string, Item>();
+            items = new Dictionary<Guid, Item>();
         }
 
         // Додаємо предмет
@@ -22,36 +22,36 @@ namespace ICP.Entity
             if (item.Type == ItemType.Consumable)
             {
                 // Для витратних матеріалів збільшуємо кількість, якщо вони вже є
-                if (items.ContainsKey(item.Name))
+                if (items.ContainsKey(item.Id))
                 {
-                    var existing = items[item.Name];
+                    var existing = items[item.Id];
                     int totalQty = existing.Quantity.Min + item.Quantity.Min;
-                    items[item.Name] = new Item(existing.Name, existing.Type, existing.Description, existing.Stat, totalQty, totalQty);
+                    items[item.Id] = new Item(existing.Name, existing.Type, existing.Description, existing.Stat, totalQty, totalQty);
                 }
                 else
                 {
-                    items[item.Name] = item;
+                    items[item.Id] = item;
                 }
             }
             else
             {
                 // Для зброї та артефактів просто додаємо, унікально за назвою
-                if (!items.ContainsKey(item.Name))
-                    items[item.Name] = item;
+                if (!items.ContainsKey(item.Id))
+                    items[item.Id] = item;
             }
         }
 
         // Видаляємо предмет (наприклад, витратний матеріал під час використання)
-        public void RemoveItem(string itemName)
+        public void RemoveItem(Guid id)
         {
-            if (items.ContainsKey(itemName))
-                items.Remove(itemName);
+            if (items.ContainsKey(id))
+                items.Remove(id);
         }
 
         // Отримати предмет за назвою
-        public Item GetItem(string itemName)
+        public Item GetItem(Guid id)
         {
-            return items.ContainsKey(itemName) ? items[itemName] : null;
+            return items.TryGetValue(id, out var item) ? item : null;
         }
         public List<Item> GetAllItems()
         {

@@ -9,7 +9,7 @@ namespace ICP
             scene.scene1.FirstScene();
 
 
-            sdweaasdfasd zxc = new sdweaasdfasd();
+       
 
 
             //Player player = new Player("Герой",100,10);

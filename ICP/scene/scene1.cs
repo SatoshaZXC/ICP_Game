@@ -14,7 +14,7 @@ namespace ICP.scene
         {
             Console.Clear();
             /*#######################################################################################################################################################*/
-            Inventory playerInventory = new Inventory();
+           
             tempOpen tempOpen = new tempOpen();
             printWithDelay("\nНазви себе, мандрівнику... або залишишся безіменним серед тіней.", 35);
             Console.Write("\n> ");
@@ -41,8 +41,8 @@ namespace ICP.scene
             Artifacts["AmuletOfShadows"] = new Item("Амулет Тіней", ItemType.Artifact, "Додає +5 до максимального здоров'я", 5);
             MagicalWeapons["ShadowBow"] = new Item("Тіньовий лук", ItemType.MagicalWeapon, "Лук, що стріляє тінями", 30);
 
-            playerInventory.AddItem(Weapons["DarkSword"]);
-            playerInventory.AddItem(Weapons["SilverDagger"]);
+            player.Inventory.AddItem(Weapons["DarkSword"]);
+            player.Inventory.AddItem(Weapons["SilverDagger"]);
 
             Chest oldChest = new Chest("Старий Сундук");
 
@@ -240,7 +240,7 @@ namespace ICP.scene
                         if (!statusOpen_1 && CoinFlip.FlipCoin())
                         {
                             printWithDelay("Всередині щось блиснуло у темряві.", 35);
-                            tempOpen.openTemp(oldChest, playerInventory);
+                            tempOpen.openTemp(oldChest, player.Inventory);
                         }
                         else
                         {
@@ -260,7 +260,7 @@ namespace ICP.scene
                         if (!statusOpen_2 && CoinFlip.FlipCoin())
                         {
                             printWithDelay("Кілька пляшечок ще зберегли дивну світлу рідину.", 35);
-                            tempOpen.openTemp(potionShelf, playerInventory);
+                            tempOpen.openTemp(potionShelf, player.Inventory);
                         }
                         else
                         {
@@ -280,7 +280,7 @@ namespace ICP.scene
                         if (!statusOpen_3 && CoinFlip.FlipCoin())
                         {
                             printWithDelay("Одна з них притягує твій погляд.", 35);
-                            tempOpen.openTemp(weaponStand, playerInventory);
+                            tempOpen.openTemp(weaponStand, player.Inventory);
                         }
                         else
                         {
@@ -300,7 +300,7 @@ namespace ICP.scene
                         if (!statusOpen_4 && CoinFlip.FlipCoin())
                         {
                             printWithDelay("На ньому лежить дивний артефакт.", 35);
-                            tempOpen.openTemp(darkAltar, playerInventory);
+                            tempOpen.openTemp(darkAltar, player.Inventory);
                         }
                         else
                         {
@@ -320,7 +320,7 @@ namespace ICP.scene
                         if (!statusOpen_5 && CoinFlip.FlipCoin())
                         {
                             printWithDelay("Ти знаходиш щось у глибині.", 35);
-                            tempOpen.openTemp(junkPile, playerInventory);
+                            tempOpen.openTemp(junkPile, player.Inventory);
                         }
                         else
                         {
@@ -336,15 +336,14 @@ namespace ICP.scene
                     case ConsoleKey.D6:
                         Console.Clear();
                         printWithDelay("Ти оглядаєш своє спорядження.", 35);
-                        equipmentMenu.equipmentMenu(player, playerInventory);
-                        //Console.ReadLine();
+                        equipmentMenu.equipmentMenu(player);
                         Console.Clear();
                         break;
 
                     case ConsoleKey.D7:
                         Console.Clear();
                         printWithDelay("Ти оглядаєш свої пожитки.", 35);
-                        playerInventory.PrintInventory();
+                        player.Inventory.PrintInventory();
                         Console.ReadLine();
                         Console.Clear();
                         break;

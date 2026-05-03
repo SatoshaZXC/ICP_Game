@@ -4,19 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
+
 namespace ICP.Entity
 {
-    enum EquipmentSlot
+    public enum EquipmentSlot
     {
         RightHand,
         LeftHand,
         Neck
     }
-        class Player
+    public class Player
     {
         public string Name { get; set; }
         public int BaseHP { get; set; }
         public int BaseDamage { get; set; }
+        public Inventory Inventory { get; private set; } = new();
 
         // предмети екіпіровки
         public Dictionary<EquipmentSlot, Item> Equipment;
@@ -75,20 +79,20 @@ namespace ICP.Entity
             }
         }
 
-        public void Equip(EquipmentSlot slot, Item item, Inventory inventory)
+        public void Equip(EquipmentSlot slot, Item item)
         {
 
             if (Equipment[slot] == null)
             {
                 Equipment[slot] = item;
-                inventory.RemoveItem(item.Name);
+                Inventory.RemoveItem(item.Id);
             }
 
             else
             {
-                inventory.AddItem(Equipment[slot]);
+                Inventory.AddItem(Equipment[slot]);
                 Equipment[slot] = item;
-                inventory.RemoveItem(item.Name);
+                Inventory.RemoveItem(item.Id);
             }
         }
 

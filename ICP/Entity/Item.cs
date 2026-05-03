@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ICP.Entity
 {
-    enum ItemType
+    public enum ItemType
     {
         Weapon,
         MagicalWeapon,
@@ -14,8 +14,9 @@ namespace ICP.Entity
         Artifact
     }
 
-    class Item
+    public class Item
     {
+        public Guid Id { get; private set; } = Guid.NewGuid();
         public string Name { get; set; }            // Назва предмета в стилі дарк-фентезі
         public ItemType Type { get; set; }          // Тип предмета
         public string Description { get; set; }     // Короткий опис

@@ -9,7 +9,7 @@ namespace ICP.Entity
 {
     internal class EquipmentMenu
     {
-        public void equipmentMenu(Player player, Inventory inventory)
+        public void equipmentMenu(Player player)
         {
             while (true)
             {
@@ -73,7 +73,7 @@ namespace ICP.Entity
                 // Отримуємо предмети, що підходять для слота
                 List<Item> validItems = new List<Item>();
 
-                foreach (var item in inventory.GetAllItems())
+                foreach (var item in player.Inventory.GetAllItems())
                 {
                     if ((slot == EquipmentSlot.RightHand || slot == EquipmentSlot.LeftHand) &&
                         (item.Type == ItemType.Weapon || item.Type == ItemType.MagicalWeapon))
@@ -103,7 +103,7 @@ namespace ICP.Entity
                     Console.Write($"{i + 1}. {validItems[i].Name}");
                     Console.ResetColor();
 
-                    Console.WriteLine($" (Шкода: {validItems[i].Stat})");
+                    Console.WriteLine($" (Шкода: {validItems[i].Stat} id: {validItems[i].Id})");
                 }
 
                 Console.Write("\nОбери предмет: ");
@@ -146,7 +146,7 @@ namespace ICP.Entity
                 if (selectedItem == null || slot == null)
                     return;
 
-                player.Equip(slot.Value, selectedItem, inventory);
+                player.Equip(slot.Value, selectedItem);
                 //inventory.RemoveItem(selectedItem.Name);
                 Console.WriteLine($"\nЕкіпіровано: {selectedItem.Name}");
                 Console.Clear();
