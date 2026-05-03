@@ -12,7 +12,7 @@ namespace ICP.Entity
         LeftHand,
         Neck
     }
-    class Player
+        class Player
     {
         public string Name { get; set; }
         public int BaseHP { get; set; }

@@ -18,7 +18,7 @@ namespace ICP.scene
             tempOpen tempOpen = new tempOpen();
             printWithDelay("\nНазви себе, мандрівнику... або залишишся безіменним серед тіней.", 35);
             Console.Write("\n> ");
-            Player.CreatePlayer(Console.ReadLine());
+            Player player = Player.CreatePlayer(Console.ReadLine());
             Console.Clear();
             EquipmentMenu equipmentMenu = new EquipmentMenu();
 
