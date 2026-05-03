@@ -26,18 +26,18 @@ namespace ICP.Entity
                 {
                     var existing = items[item.Id];
                     int totalQty = existing.Quantity.Min + item.Quantity.Min;
-                    items[item.Id] = new Item(existing.Name, existing.Type, existing.Description, existing.Stat, totalQty, totalQty);
+                    //it/*ems[item.Id] = new Item(existing.Name, existing.Type, existing.Description, existing.Stat, totalQty, totalQty);*/
                 }
                 else
                 {
-                    items[item.Id] = item;
+                    /*items[item.Id] = item*/;
                 }
             }
             else
             {
                 // Для зброї та артефактів просто додаємо, унікально за назвою
-                if (!items.ContainsKey(item.Id))
-                    items[item.Id] = item;
+                //if (!items.ContainsKey(item.Id))
+                    //items[item.Id] = item;
             }
         }
 

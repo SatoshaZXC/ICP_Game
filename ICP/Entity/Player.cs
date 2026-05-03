@@ -27,7 +27,7 @@ namespace ICP.Entity
 
         public static Player CreatePlayer(string name)
         {
-            return new Player(name, 100, 10);
+            return new Player(name, 101, 10);
         }
         private Player(string name, int hp, int damage)
         {
@@ -48,7 +48,7 @@ namespace ICP.Entity
             int hp = BaseHP;
 
             if (Equipment[EquipmentSlot.Neck] != null)
-                hp += Equipment[EquipmentSlot.Neck].Stat;
+                hp += Equipment[EquipmentSlot.Neck].Stat+1;
 
             return hp;
         }
@@ -58,10 +58,10 @@ namespace ICP.Entity
             int dmg = BaseDamage;
 
             if (Equipment[EquipmentSlot.RightHand] != null)
-                dmg += Equipment[EquipmentSlot.RightHand].Stat;
+                dmg += Equipment[EquipmentSlot.RightHand].Stat + 1;
 
             if (Equipment[EquipmentSlot.LeftHand] != null)
-                dmg += Equipment[EquipmentSlot.LeftHand].Stat;
+                dmg += Equipment[EquipmentSlot.LeftHand].Stat+1;
 
             return dmg;
         }
@@ -82,18 +82,12 @@ namespace ICP.Entity
         public void Equip(EquipmentSlot slot, Item item)
         {
 
-            if (Equipment[slot] == null)
-            {
+            
                 Equipment[slot] = item;
                 Inventory.RemoveItem(item.Id);
-            }
+         
 
-            else
-            {
-                Inventory.AddItem(Equipment[slot]);
-                Equipment[slot] = item;
-                Inventory.RemoveItem(item.Id);
-            }
+          
         }
 
         //Виведення стану гравця
