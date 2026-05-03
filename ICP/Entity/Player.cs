@@ -21,7 +21,11 @@ namespace ICP.Entity
         // предмети екіпіровки
         public Dictionary<EquipmentSlot, Item> Equipment;
 
-        public Player(string name, int hp, int damage)
+        public static Player CreatePlayer(string name)
+        {
+            return new Player(name, 100, 10);
+        }
+        private Player(string name, int hp, int damage)
         {
             Name = name;
             BaseHP = hp;
