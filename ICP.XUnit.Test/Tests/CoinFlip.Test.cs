@@ -9,6 +9,7 @@ namespace ICP.XUnit.Test.Tests
 {
     public class CoinFlipTests
     {
+        // Parameterized test for EvaluateResult method
         [Theory]
         [InlineData(true, true, true)]
         [InlineData(true, false, false)]
@@ -24,10 +25,12 @@ namespace ICP.XUnit.Test.Tests
 
             Assert.Equal(expected, result);
         }
+        // This test is skipped because the coin animation is not testable in a unit test environment
         [Fact(Skip = "Coin animation is not testable yet")]
         public void CoinAnimation_ShouldWork()
         {
         }
+        // This test is expected to fail because the cursed luck system is not implemented yet
         [Fact]
         public void XFail_CursedLuck_ShouldAlwaysLose()
         {

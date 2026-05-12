@@ -9,9 +9,11 @@ namespace ICP.XUnit.Test.Tests
 {
     public class PlayerTest
     {
+        // Fixture для створення гравця та предмета, які використовуються в тестах.
         private readonly Player _player;
         private readonly Item _sword;
 
+        // Конструктор виконується перед кожним тестом, забезпечуючи чистий стан.
         public PlayerTest()
         {
             _player = Player.CreatePlayer("TestHero");
@@ -22,14 +24,14 @@ namespace ICP.XUnit.Test.Tests
                     "Shadow blade",
                     15);
         }
-
+        // Тестування початкового стану інвентарю гравця.
         [Fact]
         public void Inventory_ShouldStartEmpty()
         {
             Assert.Empty(
                 _player.Inventory.GetAllItems());
         }
-
+        // Тестування додавання предмета до інвентарю.
         [Fact]
         public void AddItem_ShouldIncreaseCount()
         {
@@ -38,6 +40,7 @@ namespace ICP.XUnit.Test.Tests
             Assert.Single(
                 _player.Inventory.GetAllItems());
         }
+        // Тестування отримання предмета за його ідентифікатором (якого немає).
         [Fact]
         public void GetItem_ShouldThrowException_WhenItemNotFound()
         {
@@ -45,6 +48,7 @@ namespace ICP.XUnit.Test.Tests
             Assert.Throws<Exception>(
                 () => _player.Inventory.GetItem(nonExistentId));
         }
+        // Помилковий тест для перевірки початкового HP гравця, який очікує неправильне значення.
         [Fact]
         public void Wrong_HP_Test()
         {
