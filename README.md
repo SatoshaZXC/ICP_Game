@@ -33,3 +33,5 @@
 
 ```bash
 dotnet run --project ICP
+```
+## порядок роботи з проєктом [CONTRIBUTING.md](CONTRIBUTING.md).
