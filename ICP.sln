@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICP.Tests", "ICP.Test\ICP.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICP.AssertTests", "ICP.AssertTests\ICP.AssertTests.csproj", "{48EB8ADF-57FF-4833-AAE6-E77EBD7D6A91}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICP.XUnit.Test", "ICP.XUnit.Test\ICP.XUnit.Test.csproj", "{FC60D977-F836-4E89-9C71-620AAA2B338E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{48EB8ADF-57FF-4833-AAE6-E77EBD7D6A91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48EB8ADF-57FF-4833-AAE6-E77EBD7D6A91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48EB8ADF-57FF-4833-AAE6-E77EBD7D6A91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC60D977-F836-4E89-9C71-620AAA2B338E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC60D977-F836-4E89-9C71-620AAA2B338E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC60D977-F836-4E89-9C71-620AAA2B338E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC60D977-F836-4E89-9C71-620AAA2B338E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

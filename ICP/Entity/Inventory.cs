@@ -51,7 +51,12 @@ namespace ICP.Entity
         // Отримати предмет за назвою
         public Item GetItem(Guid id)
         {
-            return items.TryGetValue(id, out var item) ? item : null;
+            if (!items.ContainsKey(id))
+                throw new Exception("Item not found");
+
+            return items[id];
+
+            //return items.TryGetValue(id, out var item) ? item : null;
         }
         public List<Item> GetAllItems()
         {

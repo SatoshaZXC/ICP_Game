@@ -94,9 +94,12 @@ namespace ICP
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(result + "    ");
             Console.ResetColor();
-            return playerChoice ==resultReturn ?  true : false;
-            
+            return EvaluateResult(playerChoice, resultReturn);
 
+        }
+        public static bool EvaluateResult(bool playerChoice, bool coinResult)
+        {
+            return playerChoice == coinResult;
         }
     }
 }
